@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #progress {
+            width: 100%;
+            background-color: rgb(168, 167, 167);
+        }
+        #my-bar{
+            width:1%;
+            height:30px;
+            background-color: rgb(24, 224, 24);
+        }
+
+    </style>
+</head>
+<script src="pixi/pixi.min.js"></script>
+
+<body>
+    <div id="prog-bar" class="progress">
+        <div class="progress-bar">
+        </div>
+    </div>
+    <div id="progress">
+        <div id="my-bar">
+            
+        </div>
+    </div>
+    <!-- <canvas id="my-canvas"></canvas> -->
+    <script type="text/javascript">
+        let type = "WebGL"
+        if (!PIXI.utils.isWebGLSupported()) {
+            type = "canvas"
+        }
+
+        PIXI.utils.sayHello(type)
+    </script>
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="load_progress.js"></script> -->
+    <!-- <script src="imageLoad.js"></script> -->
+    <!-- <script type="module" src="scale.js"></script> -->
+    <script src="sprites.js"></script>
+</body>
+
+</html>

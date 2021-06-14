@@ -1,2 +1,1 @@
-# PIXI-lookup
-In sync with my personal
+### PIXI JS Repo
