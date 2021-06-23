@@ -1,0 +1,52 @@
+{"frames": {
+
+"banana.jpg":
+{
+	"frame": {"x":0,"y":0,"w":360,"h":360},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":360},
+	"sourceSize": {"w":360,"h":360}
+},
+"blob.png":
+{
+	"frame": {"x":840,"y":370,"w":872,"h":720},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":872,"h":720},
+	"sourceSize": {"w":872,"h":720}
+},
+"door.jpg":
+{
+	"frame": {"x":360,"y":0,"w":360,"h":360},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":360},
+	"sourceSize": {"w":360,"h":360}
+},
+"dungeon.png":
+{
+	"frame": {"x":720,"y":0,"w":600,"h":370},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":600,"h":370},
+	"sourceSize": {"w":600,"h":370}
+},
+"monke.png":
+{
+	"frame": {"x":0,"y":370,"w":840,"h":646},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":840,"h":646},
+	"sourceSize": {"w":840,"h":646}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "tileset.png",
+	"format": "RGBA8888",
+	"size": {"w":1712,"h":1090},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:39937485fc728cd600e7e7ae55759f4b:8bd99c395a4ecaf340a06dc5cce55366:ace0e5e82375743ccde85e973fd84fb5$"
+}
+}
