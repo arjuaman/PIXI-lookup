@@ -1,0 +1,61 @@
+TO load image in the network:
+
+const loader = Loader.shared
+loader.baseUrl = 'assets/img';
+loader.add('head.png');
+loader.onComplete.add(this.createImage.bind(this));
+loader.load();
+
+const img = Sprite.from('assets/img/car1.png');
+img.anchor.set(0.5);
+this.stage.addChild(img);
+
+i.e :
+
+import { Text, Application, Container, TextStyle, Loader, Sprite } from 'pixi.js';
+
+export class Game {
+    public message: Text;
+    private stage: Container;
+    public app: Application;
+
+    constructor(app: Application) {
+        ....
+
+        const loader = Loader.shared
+        loader.baseUrl = 'assets/img';
+        loader.add('car1.png');
+        loader.onComplete.add(this.createImage.bind(this));
+        loader.load();
+    }
+...
+    private createImage(...args: any[]):Sprite {
+        console.log(args);
+        const img = Sprite.from('assets/img/body.png');
+        img.anchor.set(0.5, 0.5);
+        img.position.set(100,100);
+        this.stage.addChild(img);
+        return img;
+    }
+...
+}
+
+
+OR:
+
+const loader = Loader.shared
+loader.baseUrl = 'assets/img';
+loader.add('head.png');
+loader.onComplete.add(this.createImage.bind(this));
+loader.load();
+
+private createImage(loader:Loader, resource:{[key:string]:any}):Sprite {
+    console.log(loader);
+    const img = Sprite.from(resource['head.png'].texture);
+    img.anchor.set(0.5, 0.5);
+    img.position.set(100,100);
+    this.stage.addChild(img);
+    return img;
+}
+
+

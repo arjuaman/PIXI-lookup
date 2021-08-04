@@ -1,0 +1,12 @@
+We've now used TilingSprite.
+these are background of our snake/car.
+snake/car is still created using createImage function.
+snake/car is static and the rest of the background(i.e TilingSprites) are moving.
+We create a container called background and ADD all the TilingSprites to it.
+We're going to stage this background only.
+
+TilingSprite takes texture as primary input, and width and height as optional inputs.
+
+We make the corresponding changes in update function to move the background.
+
+Texture<Resource> means texture as a type resource.

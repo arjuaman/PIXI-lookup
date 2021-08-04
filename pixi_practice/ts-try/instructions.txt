@@ -1,0 +1,25 @@
+tsc --init    -> tsconfig
+npm init -y   -> package.json
+
+npm i --save pixi.js
+npm i -D typescript webpack webpack-cli webpack-dev-server ts-loader eslint eslint-plugin-import clean-webpack-plugin html-webpack-plugin 
+file-loader copy-webpack-plugin @types/pixi.js
+
+npx eslint --init
+
+modify eslintrc.js
+add webpack.config.js
+
+npm i -D @types/node
+add scripts to package.json
+
+create ts and assets folders in src
+
+
+In index.ts =>
+
+import {Application} from 'pixi.js'; // will import from pixi.js
+sharedTicker is like rAF of pixi.js
+sharedTicker needs not be passed to every thing, it does automatically, whereas if we create a new ticker , we have to share with all files.
+
+npm i -D css-loader sass sass-loader style-loader
