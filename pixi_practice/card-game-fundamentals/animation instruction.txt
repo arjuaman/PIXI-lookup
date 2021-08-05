@@ -1,0 +1,42 @@
+In preloader(assets), write:
+
+to add goku top leftmost goku, add only its dimensions.
+
+const w = 50;
+const h = 85;
+const gsbt = new BaseTexture(app.loader.resources['goku-ss'].url);
+const gokuStill = new Texture(gsbt, new Rectangle(0,0,w,h));
+
+Issi ko baad me generalize krke Textures.ts me getSSAnimTextures function me daala hai.
+Uske baad simply call krna hoga:
+>> this.createImage(getSSAnimTextures('goku-ss','still')[0]);
+
+Iss poore ko bhi game.ts ke function createAnimated me daal diya hai.
+
+so we'd create a mini texture from big texture of the part we want.
+
+alter the createImage function too for Texture<Resource>, i.e. 
+>> private createImage(texture: Texture<Resource>): Sprite {...}
+
+In animation idle, we'll set it to animate between two frames.
+
+
+
+So after creation of functions getSSAnimTextures in Textures.ts and createAnimated in Game.ts,
+we can create animation using:
+
+preLoader(assets, () => {
+            this.createImage(getSSAnimTextures('goku-ss', 'still')[0]);
+            this.createAnimated('goku-ss','idle');
+})
+
+
+to move goku, usko DisplayObject banake update function me uske x me delta ya any another value add krte jayenge.
+
+
+getTextures function Textures.ts me json se banane ke liye, example dino.json
+
+
+onkeydown pe dino move krega, onkeyup pe nhi krega.
+Do the corresponding changes in update function too, i.e 
+add/sub speed to x of dino sprite on respective key press. 
