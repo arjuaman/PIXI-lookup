@@ -1,0 +1,64 @@
+index.ts not changed.
+animation.ts not used as dimensions are known so programmatically will be used.
+
+load the assets.
+
+
+In card.ts:
+Plan was to run three loops, onr for row, column and third one for adding each face two times.
+Loops run krke cardFrames me add karte jaana hai.
+
+frame me dimension store hoga cards ka, jinka renaming kiya gaya hai.
+
+upar wo cheez ayegi constructor me jo baad me add krenge.
+that's why back ko baad me rkhenge front ke.
+to getfront of constructor, we create getFrontTexture function.
+
+
+So Card1.ts and Game1.ts added 1 card to (0,0);
+
+utils.ts is created for shuffling the array of cards.
+
+background ko rename krke game
+
+In Game2.ts all 48 cards have been loaded but they're at the same position (0,0) i.e overlapping.
+Also basic sa createCard function bnaya hai.
+
+So to place these cards nicely, we create placeCard function.
+renamed w and to CARD_WIDTH and CARD_HEIGHT, and exported it.
+
+index.ts and css se dimensions thik kiye.
+
+Adding the following lines in Card.ts makes the visibility of backside,i.e. card false, thus revealing the card inside.
+    
+            this.back.interactive = true;
+            this.back.on('pointerup', () => {
+                this.back.visible = false;
+            });
+
+PIXI has ON and OFF instead of addEventListener or removeEventListener.
+
+But then we remove this block of code and add interactvity directly to each card,
+in the createCard function only. new card and stage krne wale lines  ke beech me daalenege.
+
+pointerup -> jab mouse chhodenge
+
+If firstSelection hai to secondSelection ho jayegi, else vice-versa int he following code:
+
+                if (this.firstSelection) {
+                    this.secondSelection = card;
+                } else {
+                    this.firstSelection = card;
+                }
+
+Also at the time of secondSelection, we have to make other cards unclickable.
+So we create a boolean function cardEnabled for this purpose.
+
+private cardEnabled(value:boolean) {
+      this.game.children.forEach((child) => child.interactive = value);
+}
+
+CHECKrESULT FUNCTION TO CHECK RESULT BY COMPARING FIRSTSELECTION.NAME AND SECONDSELECTION.NAME
+
+npm i --save gsap @types/gsap
+
