@@ -1,0 +1,35 @@
+angelcode.com - bmfont
+
+can be created in photoshop, texturepacker or shoebox.
+
+renderhjs.net/shoebox/bitmapFont.htm
+
+add the font's xml to assets.ts
+
+created a new container called this.start for the fonts, and staged it along with the pre-existing card-game container.
+
+created a function named createStartText(), and called it within preLoader along with game items.
+
+
+new font is created using:
+
+      const title = new BitmapText('Memory Game', {
+        fontName: 'Desyrel',
+        fontSize: 120,
+        align: 'center',
+      });
+
+fonName is different from what is the key in assets.ts because fontName should always be what is defined in the face attribute of info tag within font tag of xml file.
+
+
+In the following piece of code:
+
+      start.buttonMode = true;     // gives button like property
+      start.interactive = true;    // will make the font clickable
+      start.on('pointerup', () => {
+        this.start.visible = false;
+        this.game.visible = true;
+        this.stage.removeChild(this.start);
+      });
+
+i.e. when clicked on start, our game will run and start is then removed in removeChild
