@@ -1,0 +1,63 @@
+Adding the object to stage:
+
+        const graphics = new Graphics();
+        this.stage.addChild(graphics);
+
+PIXI.Graphics is subchild of PIXI.Display object
+
+beginFill requires endFill after the drawing.
+
+The following creates a rectangle of red color:
+
+        graphics.beginFill(0xff0000);
+        graphics.drawRect(10,10,100,100);
+        graphics.endFill();
+
+Stroke ke liye linestyle property use hogi. Linestyle me width and color bhi add kr skte hain.
+
+        graphics.lineStyle(3, 0x333333, 0.5);
+
+3rd property is alpha
+alpha 1 = opaque, 0 transparent, 0.5 translucent
+
+In rounded rectangle, the fifth property is value of roundness.
+
+        graphics.drawRoundedRect(230,10,100,100,10);   //only in pixi, not avlbl in canvas
+
+Polygon is basically created using moveTo and lineTo. 
+
+
+Jisko mask karna hai, uss object ki property hoti hai "mask". by default it is NULL. 
+To set it, mask it:
+
+      const custom_mask = new Graphics();
+      this.stage.addChild(custom_mask);
+
+      custom_mask.x = this.app.view.width / 2;
+      custom_mask.y = this.app.view.height / 2;
+
+      custom_mask.lineStyle(1, 0x333333, 0.4);
+      custom_mask.beginFill(0x0000ff, 0.75);
+      custom_mask.drawCircle(0,0,400);             // iss circle ke andar ki cheezein hi dikhengi
+      custom_mask.endFill();
+
+      graphics.mask = custom_mask;
+
+
+In the following lines of code, if mask pe click karenge then wo mask on/off toggle krega:
+
+      custom_mask.interactive = true;
+      custom_mask.on('pointerup',()=>{
+        if(graphics.mask){
+          graphics.mask = null;
+        }
+        else{
+          graphics.mask = custom_mask;
+        }
+      });
+
+
+hole will prevent the area from masking, i.e. the region covered by the hole would be treated like outside the mask.
+
+
+
