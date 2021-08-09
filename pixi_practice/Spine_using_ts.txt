@@ -1,0 +1,9 @@
+install pixi-spine, @pixi-spine/base, @pixi-spine/runtime-4.0
+
+add json of spine files to assets
+
+lot of people load skeleton, png and atlas separately, thus we've to import SpineParser from a separate ts file.
+
+(window as any).PIXI = PIXI; //added PIXI as window context.
+
+then load simply in preLoader of Game.ts

@@ -1,0 +1,87 @@
+We'll create Emitter class by extending ParticleContainer of PIXI.
+It'll be responsible for emitting particles.
+
+Interactive particle editor for trying out settings: https://pixijs.io/pixi-particles-editor/
+>> config properties:
+
+1) alpha is visibility.
+
+        alpha: {
+            list: [
+                {
+                    value: 0.8,         //starting value
+                    time: 0
+                },
+                {
+                    value: 0.1,        //end value
+                    time: 1
+                }
+            ],
+            isStepped: false
+        },
+
+2) scale
+
+        scale: {
+            list: [
+                {
+                    value: 1,   //iss size se banne shuru honge
+                    time: 0
+                },
+                {
+                    value: 0.3,  //gradually iss size ke ho jayenge
+                    time: 1
+                }
+            ],
+            isStepped: false
+        },
+
+3) color
+
+        color: {
+            list: [
+                {
+                    value: "fb1010",
+                    time: 0
+                },
+                {
+                    value: "f5b830",
+                    time: 1
+                }
+            ],
+            isStepped: false
+        },
+
+4) speed 
+
+        speed: {
+            list: [
+                {
+                    value: 200,   // starting speed
+                    time: 0
+                },
+                {
+                    value: 100,  // ending speed
+                    time: 1
+                }
+            ],
+            isStepped: false
+        },
+
+5) rotation speeds:
+
+        startRotation: {
+            min: 0,
+            max: 360
+        },
+        rotationSpeed: {
+            min: 0,
+            max: 0
+        },
+
+6) lifetime: kitne der tak life h sprites ki 
+
+        lifetime: {
+            min: 0.5,
+            max: 0.5
+        },
