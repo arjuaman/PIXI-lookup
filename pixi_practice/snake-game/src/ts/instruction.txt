@@ -1,0 +1,32 @@
+start with Snake.ts
+
+take a default start_length, size;
+declare color, dir, parts, partPos etc...
+
+In Snake1 and Game1, we drew the snake.
+
+Added keyMap in Game2 for directions.
+
+We then create :
+    
+    private readonly inverseDir = {
+        [Directions.UP]: Directions.DOWN,
+        [Directions.DOWN]: Directions.UP,
+        [Directions.LEFT]: Directions.RIGHT,
+        [Directions.RIGHT]: Directions.LEFT,
+    }
+
+because we want to prevent snake moving in opposite direction while in motion.
+So in keyDown we add:
+
+        if (lastDir && lastDir != this.inverseDir[this.snake.dir as Directions]) {
+            this.snake.dir = lastDir as Directions;
+        }
+
+
+Now we'll make the snake crawl in part3.
+
+in part4, we made the snake of Sprite instead of Graphics, i.e. we made it out of an image of beads.
+and also performed collision detection.
+
+We then want that snake eats itself whenever it collides with self.
